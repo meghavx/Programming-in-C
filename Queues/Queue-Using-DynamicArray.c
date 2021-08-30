@@ -91,9 +91,11 @@ DynamicArrQueue *CreateDynQueue() {
         printf("\n Memory error!\n");
         return NULL;
     }
+    
     Q->capacity = 1;
     Q->front = Q->rear = -1;
     Q->array = malloc(Q->capacity * sizeof(int));
+    
     if (!Q) {
         printf("\n Memory error!\n");
         return NULL;
@@ -175,7 +177,8 @@ void DisplayQueue(DynamicArrQueue *Q) {
     if (GetSize(Q) == 0) {
         printf("\n\n Nothing there to display; Queue is empty!\n");
         return;
-    } else {
+    } 
+    else {
         printf("\n\n >> Current status of the Queue:\n\n\t ----------\n");
         for (int i = 0; i < GetSize(Q); i++)
             printf("\t |  %3d   |\n\t ----------\n", Q->array[i]);
@@ -193,9 +196,9 @@ void DeleteQueue(DynamicArrQueue *Q) {
         if (Q->array)
             free(Q->array);
         free(Q);
-        Q->size = 0;
-        Q->capacity = 1;
-        Q->front = Q->rear = -1;
     }
     printf("\n Queue has been successfully deleted!\n\n");
+    Q->size = 0;
+    Q->capacity = 1;
+    Q->front = Q->rear = -1;
 }
