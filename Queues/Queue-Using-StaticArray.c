@@ -91,17 +91,15 @@ StaticArrQueue *CreateQueue() {
         printf("\nMemory error!\n");
         return NULL;
     }
-    
     Q->capacity = MAXSIZE;
     Q->size = 0;
     Q->rear = Q->front = -1;
     Q->array = (int *) malloc (Q->capacity * sizeof(int));
-    
+  
     if (!Q->array) {
         printf("\nMemory error!\n");
         return NULL;
     }
-
     return Q;
 }
 
@@ -150,7 +148,6 @@ int Front(StaticArrQueue *Q) {
         printf("\n Can't get front of the queue; Queue is empty!\n");
         return INT_MIN;
     }
-    
     return (Q->array[Q->front]);
 }
 
@@ -160,7 +157,6 @@ int Rear(StaticArrQueue *Q) {
         printf("\n Can't get front of the queue; Queue is empty!\n");
         return INT_MIN;
     }
-    
     return (Q->array[Q->rear]);
 }
 
