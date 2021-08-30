@@ -166,11 +166,12 @@ void DisplayQueue(StaticArrQueue *Q) {
     if (Q->size == 0) {
         printf("\n\n Nothing there to display; Queue is empty!\n");
         return;
-    } else {
-        printf("\n\n >> Current status of the Queue:\n\n\t ----------\n");
+    } 
+    else {
+        printf("\n\n >> Current status of the Queue:\n\n\tFront —> ");
         for (int i = 0; i < GetSize(Q); i++)
-            printf("\t |  %3d   |\n\t ----------\n", Q->array[i]);
-        printf("\n");
+            printf(" %3d ", Q->array[i]);
+        printf(" <— Rear\n");
     }
 }
 
