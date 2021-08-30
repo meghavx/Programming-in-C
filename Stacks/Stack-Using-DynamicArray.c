@@ -24,7 +24,7 @@ void DisplayStack(DynamicArrStack *);
 int main() {
     int elem, ch = -1, popped;
     DynamicArrStack *myStack = CreateStack();
-    
+    printf ("\n\n--------------------STACK USING DYNAMIC ARRAY--------------------\n\n");
     printf ("\n Current Status of the Stack: Empty\n\n");
     
     printf("\t=======================\n");
