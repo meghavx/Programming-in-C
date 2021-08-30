@@ -79,6 +79,7 @@ int main() {
                 break;
         }
         printf("\n | %d <- Size of the queue\n | %d <- Total capacity\n | %d <- Remaining capacity\n\n\n\n", GetSize(myQueue), MAXSIZE, MAXSIZE-GetSize(myQueue));
+    
     } while (ch != 0);
 
     return 0;
