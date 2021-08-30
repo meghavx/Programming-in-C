@@ -10,7 +10,7 @@ typedef struct node {
 int size = 0;
 
 LLStack *CreateStack();
-int GetSize(LLStack *);
+int GetSize();
 int IsEmptyStack(LLStack *);
 void Push(LLStack **, int);
 int Pop(LLStack **);
@@ -69,7 +69,7 @@ int main() {
                 printf("\n Invalid choice entered!\n");
                 break;
         }
-        printf("\n | %d <- Size of the stack\n\n\n\n", GetSize(top));
+        printf("\n | %d <- Size of the stack\n\n\n\n", GetSize());
     
     } while (ch != 0);
 
@@ -82,13 +82,12 @@ LLStack *CreateStack() {
 }
 
 
-int GetSize(LLStack *top) {
+int GetSize() {
     return size;
 }
 
 
 int IsEmptyStack(LLStack *top) {
-    // return top->size == 0;
     return (top == NULL);
 }
 
