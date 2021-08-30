@@ -62,6 +62,7 @@ int main() {
                 DeleteStack(myStack);
                 break;
             case 0:
+                printf("\n GOODBYE!\n");
                 exit(1);
                 break;
             default:
