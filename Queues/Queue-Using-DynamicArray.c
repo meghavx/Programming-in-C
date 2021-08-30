@@ -53,7 +53,7 @@ int main() {
             case 2:
                 dequeued = Dequeue(myQueue);
                 if (dequeued > INT_MIN)
-                    printf("\n\n Dequeued element: %d\n", dequeued);
+                    printf(" Dequeued element: %d\n", dequeued);
                 break;
             case 3:
                 if (Front(myQueue) > INT_MIN)
@@ -88,14 +88,14 @@ int main() {
 DynamicArrQueue *CreateDynQueue() {
     DynamicArrQueue *Q = malloc(sizeof(DynamicArrQueue));
     if (!Q) {
-        printf("\nMemory error!\n");
+        printf("\n Memory error!\n");
         return NULL;
     }
     Q->capacity = 1;
     Q->front = Q->rear = -1;
     Q->array = malloc(Q->capacity * sizeof(int));
     if (!Q) {
-        printf("\nMemory error!\n");
+        printf("\n Memory error!\n");
         return NULL;
     }
     return Q;
@@ -120,14 +120,20 @@ int isEmptyQueue(DynamicArrQueue *Q) {
 
 
 void Enqueue(DynamicArrQueue *Q, int val) {
-    if ((Q->rear+1) % Q->capacity == Q->front)
+    // if ((Q->rear+1) % Q->capacity == Q->front)
+    if (GetSize(Q) == Q->capacity)
         DoubleQueue(Q);
+    
     Q->rear = (Q->rear + 1) % (Q->capacity);
     Q->array[Q->rear] = val; 
+    
     if (Q->front == -1)
         Q->front = Q->rear;
+    
     Q->size++;
+    printf(" %d has been successfully enqueued!\n", val);
 }
+
 
 int Dequeue(DynamicArrQueue *Q) {
     if (isEmptyQueue(Q)) {
@@ -141,6 +147,7 @@ int Dequeue(DynamicArrQueue *Q) {
         else
             Q->front += 1;
         Q->size--;
+        printf("\n Element has successfully been dequeued!\n");
         return val;
     }
 }
@@ -165,7 +172,7 @@ int Rear(DynamicArrQueue *Q) {
 
 
 void DisplayQueue(DynamicArrQueue *Q) {
-    if (Q->size == 0) {
+    if (GetSize(Q) == 0) {
         printf("\n\n Nothing there to display; Queue is empty!\n");
         return;
     } else {
