@@ -29,9 +29,9 @@ int main() {
 
     printf ("\n Current Status of the Stack: Empty\n\n");
     
-    printf("\t======================\n");
+    printf("\t=======================\n");
     printf("\t STACK-OPERATIONS MENU \n");
-    printf("\t======================\n");
+    printf("\t=======================\n");
     printf("\n\t1 Push");
     printf("\n\t2 Pop");
     printf("\n\t3 Get Top");
@@ -86,9 +86,11 @@ StaticArrStack *CreateStack() {
         printf("\nMemory error!\n");
         return NULL;
     }
+    
     S->capacity = MAXSIZE;
     S->top = -1;
     S->array = malloc(S->capacity * sizeof(int));
+    
     if (!S->array)
         return NULL;
     return S;
@@ -141,7 +143,8 @@ void DisplayStack(StaticArrStack *S) {
     if (GetSize(S) == 0) {
         printf("\n\n Nothing there to display; Stack is empty!\n");
         return;
-    } else {
+    } 
+    else {
         printf("\n\n >> Current status of the Stack:\n\n\t ----------\n");
         for (int i = GetSize(S)-1; i >= 0; i--)
             printf("\t |  %3d   |\n\t ----------\n", S->array[i]);
