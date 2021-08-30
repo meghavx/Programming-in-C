@@ -73,6 +73,7 @@ int main() {
                 break;
         }
         printf("\n | %d <- Size of the stack\n | %d <- Total capacity\n | %d <- Remaining capacity\n\n\n\n", GetSize(myStack), MAXSIZE, MAXSIZE-GetSize(myStack));
+    
     } while (ch != 0);
 
     return 0;
