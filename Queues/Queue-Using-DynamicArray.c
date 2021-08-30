@@ -27,6 +27,7 @@ int main() {
     int elem, ch = -1, dequeued;
     DynamicArrQueue *myQueue = CreateDynQueue();
     
+    printf ("\n\n--------------------QUEUE USING DYNAMIC ARRAY--------------------\n\n");
     printf ("\n Current Status of the Queue: Empty\n\n");
     
     printf("\t=======================\n");
@@ -177,7 +178,8 @@ void DisplayQueue(DynamicArrQueue *Q) {
     if (GetSize(Q) == 0) {
         printf("\n\n Nothing there to display; Queue is empty!\n");
         return;
-    } else {
+    } 
+    else {
         printf("\n\n >> Current status of the Queue:\n\n\tFront —> ");
         for (int i = 0; i < GetSize(Q); i++)
             printf(" %3d ", Q->array[i]);
