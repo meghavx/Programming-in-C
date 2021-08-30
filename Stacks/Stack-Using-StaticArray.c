@@ -26,7 +26,7 @@ int main() {
 
     int elem, ch = -1, popped;
     StaticArrStack *myStack = CreateStack();
-
+    printf ("\n\n--------------------STACK USING STATIC ARRAY--------------------\n\n");
     printf ("\n Current Status of the Stack: Empty\n\n");
     
     printf("\t=======================\n");
@@ -109,7 +109,7 @@ int IsEmptyStack(StaticArrStack *S) {
 
 void Push(StaticArrStack *S, int val) {
     if (GetSize(S) == MAXSIZE)
-        printf(" Stack Overflow! Can't push this element onto the stack!\n");
+        printf(" Memory error!\n");
     else {
         S->array[++S->top] = val;
         S->size++;
@@ -122,7 +122,8 @@ int Pop(StaticArrStack *S) {
     if (IsEmptyStack(S)) {
         printf("\n Can't pop the stack; Stack is empty!\n");
         return INT_MIN;
-    } else {
+    } 
+    else {
         printf("\n Element has been successfully popped!\n");
         S->size--;
         return (S->array[S->top--]);
