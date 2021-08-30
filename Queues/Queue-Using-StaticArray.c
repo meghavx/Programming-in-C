@@ -184,7 +184,9 @@ void DeleteQueue(StaticArrQueue *Q) {
         if (Q->array)
             free(Q->array);
         free(Q);
-        Q->size = 0;
     }
     printf("\n Queue has been successfully deleted!\n\n");
+    Q->size = 0;
+    Q->capacity = MAXSIZE;
+    Q->front = Q->rear = -1;
 }
