@@ -127,7 +127,7 @@ void Enqueue(StaticArrQueue *Q, int val) {
 
 int Dequeue(StaticArrQueue *Q) {
     if (IsEmptyQueue(Q)) {
-        printf("Queue is empty!\n");
+        printf("\n Can't perform the Dequeue operation; Queue is empty!\n");
         return INT_MIN;   
     } 
     else {
